@@ -16,11 +16,13 @@ getapi(api_url)
 function handelData(data) {
     const recipeData = data.meals[0];
     const cleanData = clean(recipeData);
+    console.log(cleanData)
     const ingredients = getIngredients(cleanData);
     const measurements = getMeasures(cleanData);
     const combinedList = combine(ingredients, measurements)
     console.log(combinedList)
     
+    getImage(cleanData);
     getRecipeName(cleanData);
     createList(combinedList)
 }
@@ -39,6 +41,15 @@ function getRecipeName(data) {
 let output = document.getElementById("recipe_name");
 output.innerHTML = data.strMeal;
 }
+
+function getImage(data) {
+    const image = document.createElement("img");
+    const imageParent = document.getElementById("img-wrapper");
+    const imageSource = data.strMealThumb;
+    image.id = "food-image";
+    image.src = imageSource;
+    imageParent.appendChild(image);
+    }
 
 function getIngredients(data) {
     //step1 create list of all the properties in data
