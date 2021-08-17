@@ -38,7 +38,7 @@ header
             justify-content: flex-start
         dl
             padding: 0 1rem
-            margin-left: 1.5rem
+            margin-left: 1.2rem
             
         dt
             margin-right: 2rem
@@ -55,11 +55,23 @@ header
             flex-direction: row
             justify-content: flex-start
             padding: 0 1rem
-            margin-left: 0.5rem
             p#tag
                 font-weight: 200
                 letter-spacing: 0.05rem
                 font-size: 0.8rem
-
+main
+    padding: 2rem 1rem
+    section
+        h2
+            margin-bottom: 1rem
+        ul
+            list-style: none
+            li
+                line-height: 1.5
+            li::before
+                content: "•"
+                color: $accent
+                display: inline-block
+                width: 1rem
         
 

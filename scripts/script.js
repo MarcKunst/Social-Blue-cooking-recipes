@@ -50,11 +50,11 @@ category.innerHTML = data.strCategory;
             area.innerHTML = data.strArea;
         }
     }
-    
+
     for (let value in data.strTags) {
         if (data.strTags[value] != undefined) {
             const tag = document.getElementById("tag");
-            tag.innerHTML = data.strTags;
+            tag.innerHTML = "Tags:" + " " + data.strTags;
         } 
     }
 
