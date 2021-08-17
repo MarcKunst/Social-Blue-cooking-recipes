@@ -1,3 +1,7 @@
+body
+    .down
+        top: 0
+        @extend body
 header
     nav
         height: 3em
@@ -18,10 +22,17 @@ header
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#373737",GradientType=1)
         h1
             position: absolute
-            left: 1rem
-            right: 1rem
+            left: 8vw
+            right: 8vw
             bottom: 1rem
             color: $background
+            @include tablet
+                left: 10vw
+                right: 10vw
+            @include desktop
+                left: 25vw
+                right: 25vw
+                font-size: 2.5rem
         img#food-img
             position: absolute
             width:100%
@@ -37,8 +48,12 @@ header
             flex-direction: row
             justify-content: flex-start
         dl
-            padding: 0 1rem
+            padding: 1rem 8vw 0
             margin-left: 1.2rem
+            @include tablet
+                padding: 1rem 10vw 0
+            @include desktop
+                padding: 1rem 25vw 0
             
         dt
             margin-right: 2rem
@@ -54,36 +69,71 @@ header
             display: flex
             flex-direction: row
             justify-content: flex-start
-            padding: 0 1rem
+            padding: 0 8vw
+            @include tablet
+                padding: 0 10vw
+            @include desktop
+                padding: 0 25vw
             p#tag
                 font-weight: 200
                 letter-spacing: 0.05rem
                 font-size: 0.8rem
+                overflow-wrap: break-word
 main
-    padding: 0 1rem
+    padding: 0 8vw
+    @include tablet
+        display: flex
+        justify-content: space-around
+        padding: 0 10vw
+    @include desktop
+        display: flex
+        justify-content: space-around
+        padding: 0 25vw
     section
         padding-top: 2rem
+        @include tablet
+            width: 50%
+        @include desktop
+            width: 50%
         h2
             margin-bottom: 1rem
+            @include desktop
+                font-size: 1.5rem
         ul
             list-style: none
             li
                 line-height: 1.5
+                @include desktop
+                    font-size: 1rem
             li::before
                 content: "•"
                 color: $accent
                 display: inline-block
                 width: 1rem
+        div#img-container
+            width: 100%
+            img#main-img
+                width: 100%
+                margin-bottom: 2rem
+                box-shadow: 0px 4px 10px 4px #20202033
         p#instructions
             line-height: 1.5
             white-space: pre-line
+            @include desktop
+                    font-size: 1rem
+
 footer
-    padding: 0 1rem
-    width: 100%
+    margin: 2rem 0
+    padding: 0 8vw
+    display: flex
+    justify-content: flex-end
+    @include tablet
+        padding: 0 10vw
+    @include desktop
+        padding: 0 25vw
     button
         width: 10rem
         height: 2rem
-        margin: 2rem auto
         border-radius: 0
         border: 0
         color: $background

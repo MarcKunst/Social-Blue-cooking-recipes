@@ -22,7 +22,6 @@ function handelData(data) {
     console.log(cleanData)
     
     getImage(cleanData);
-    getImage2(cleanData);
     getMetaData(cleanData);
     getInstructions(cleanData)
     createList(combinedList)
@@ -68,15 +67,6 @@ function getImage(data) {
     image.id = "food-img";
     image.src = imageSource;
     imageParent.appendChild(image);
-}
-
-function getImage2(data) {
-    const image = document.createElement("img");
-    const smallerContainer = document.getElementById("img-container");
-    const imageSource = data.strMealThumb;
-    image.id = "main-img";
-    image.src = imageSource;
-    smallerContainer.appendChild(image);
 }
 
 function getIngredients(data) {
@@ -131,3 +121,5 @@ function getInstructions(data) {
     const instructions = document.getElementById("instructions");
     instructions.innerHTML = data.strInstructions;
 }
+
+

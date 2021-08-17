@@ -7,10 +7,20 @@ $accent-hover: #daa00e
 $main-text-color: #000000 
 $header-text: 'Playfair Display', serif
 $main-text: 'Roboto', sans-serif
-// mixins
+$breakpoint-tablet: 768px
+$breakpoint-desktop: 1025px
+$breakpoint-bigscreen: 1800px
+
+//mixin
+@mixin tablet 
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px})
+    @content
+
+@mixin desktop 
+  @media (min-width: #{$breakpoint-desktop})
+    @content
 
 //reset    
-
 html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
     margin: 0
     padding: 0
