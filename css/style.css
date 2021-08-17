@@ -125,7 +125,10 @@ header div#tag-wrapper p#tag {
 }
 
 main {
-  padding: 2rem 1rem;
+  padding: 0 1rem;
+}
+main section {
+  padding-top: 2rem;
 }
 main section h2 {
   margin-bottom: 1rem;
@@ -141,6 +144,10 @@ main section ul li::before {
   color: #EEB626;
   display: inline-block;
   width: 1rem;
+}
+main section p#instructions {
+  line-height: 1.5;
+  white-space: pre-line;
 }
 
 /*# sourceMappingURL=style.css.map */

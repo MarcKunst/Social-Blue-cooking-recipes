@@ -16,14 +16,14 @@ getapi(api_url)
 function handelData(data) {
     const recipeData = data.meals[0];
     const cleanData = clean(recipeData);
-    console.log(cleanData)
     const ingredients = getIngredients(cleanData);
     const measurements = getMeasures(cleanData);
     const combinedList = combine(ingredients, measurements)
-    console.log(combinedList)
+    console.log(cleanData)
     
     getImage(cleanData);
     getMetaData(cleanData);
+    getInstructions(cleanData)
     createList(combinedList)
 }
 
@@ -67,7 +67,7 @@ function getImage(data) {
     image.id = "food-img";
     image.src = imageSource;
     imageParent.appendChild(image);
-    }
+}
 
 function getIngredients(data) {
     //step1 create list of all the properties in data
@@ -99,7 +99,10 @@ function combine(ingredients, measurements) {
     //step2 combine the correct values from the arrays with the map function
     const ingredientArray = Object.values(ingredients);
     const measurementArray = Object.values(measurements);
-    const zipArrays = measurementArray.map((k, i) => [k, ingredientArray[i]]);
+    const zipArrays = measurementArray
+    .map((k, i) => [k, ingredientArray[i]]
+    .join(" "));
+    
 
     return zipArrays;
 }
@@ -111,6 +114,12 @@ function createList(data) {
         ol.appendChild(li);
     }
     document.getElementById("list-wrapper").appendChild(ol);
+}
+
+function getInstructions(data) {
+
+    const instructions = document.getElementById("instructions");
+    instructions.innerHTML = data.strInstructions;
 }
 
 
