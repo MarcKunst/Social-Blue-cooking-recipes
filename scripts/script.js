@@ -23,7 +23,7 @@ function handelData(data) {
     console.log(combinedList)
     
     getImage(cleanData);
-    getRecipeName(cleanData);
+    getMetaData(cleanData);
     createList(combinedList)
 }
 
@@ -37,16 +37,34 @@ function clean(data) {
     return data
 }
 
-function getRecipeName(data) {
-let output = document.getElementById("recipe_name");
-output.innerHTML = data.strMeal;
+function getMetaData(data) {
+const title = document.getElementById("recipe_name");
+title.innerHTML = data.strMeal;
+
+const category = document.getElementById("category");
+category.innerHTML = data.strCategory;
+
+    for (let value in data.strArea) {
+        if (data.strArea[value] != undefined || data.strArea[value] != "Unknown") {
+            const area = document.getElementById("area");
+            area.innerHTML = data.strArea;
+        }
+    }
+    
+    for (let value in data.strTags) {
+        if (data.strTags[value] != undefined) {
+            const tag = document.getElementById("tag");
+            tag.innerHTML = data.strTags;
+        } 
+    }
+
 }
 
 function getImage(data) {
     const image = document.createElement("img");
     const imageParent = document.getElementById("img-wrapper");
     const imageSource = data.strMealThumb;
-    image.id = "food-image";
+    image.id = "food-img";
     image.src = imageSource;
     imageParent.appendChild(image);
     }

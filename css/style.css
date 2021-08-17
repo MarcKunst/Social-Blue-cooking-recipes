@@ -33,24 +33,95 @@ input {
   border-radius: 0;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.875em;
+}
+
 h1, h2 {
   font-family: "Playfair Display", serif;
 }
 
-p, ol, ul {
+p, ol, ul, dl {
   font-family: "Roboto", sans-serif;
+  font-size: 0.875em;
 }
 
-body {
-  background: #ffffff;
+header nav {
+  height: 3em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-body div#img-wrapper {
-  width: 100%;
+header nav img {
+  height: 0.7em;
 }
-body img {
+header article#img-wrapper {
   width: 100%;
-  height: 20vh;
+  height: 30vh;
+  position: relative;
+  background: black;
+  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(55, 55, 55, 0.5830532897) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(55, 55, 55, 0.5830532897) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(55, 55, 55, 0.5830532897) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#373737",GradientType=1);
+}
+header article#img-wrapper h1 {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  color: #ffffff;
+}
+header article#img-wrapper img#food-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  z-index: -1;
+}
+header section#meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header section#meta dl#recipe-meta-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+header section#meta dl {
+  padding: 0 1rem;
+  margin-left: 1.5rem;
+}
+header section#meta dt {
+  margin-right: 2rem;
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+  display: list-item;
+  line-height: 1;
+}
+header section#meta dt#category {
+  list-style: url(../assets/icons/restaurant_small.svg);
+}
+header section#meta dt#area {
+  list-style: url(../assets/icons/flag_small.svg);
+}
+header div#tag-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  margin-left: 0.5rem;
+}
+header div#tag-wrapper p#tag {
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=style.css.map */
