@@ -150,4 +150,22 @@ main section p#instructions {
   white-space: pre-line;
 }
 
+footer {
+  padding: 0 1rem;
+  width: 100%;
+}
+footer button {
+  width: 10rem;
+  height: 2rem;
+  margin: 2rem auto;
+  border-radius: 0;
+  border: 0;
+  color: #ffffff;
+  background-color: #EEB626;
+  transition: background-color 300ms;
+}
+footer button:hover {
+  background-color: #daa00e;
+}
+
 /*# sourceMappingURL=style.css.map */
