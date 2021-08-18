@@ -65,20 +65,31 @@ header
             list-style: url(../assets/icons/restaurant_small.svg)
         dt#area
             list-style: url(../assets/icons/flag_small.svg)
-    div#tag-wrapper
+    div
             display: flex
-            flex-direction: row
+            flex-direction: column
             justify-content: flex-start
             padding: 0 8vw
             @include tablet
                 padding: 0 10vw
             @include desktop
                 padding: 0 25vw
-            p#tag
+            p
                 font-weight: 200
                 letter-spacing: 0.05rem
                 font-size: 0.8rem
                 overflow-wrap: break-word
+            a
+                font-size: 0.8rem
+                font-family: 'roboto', sans-serif
+                font-weight: 200
+                color: $accent
+    div#source-wrapper
+            padding: 1rem 8vw 0rem
+            @include tablet
+                padding: 1rem 10vw
+            @include desktop
+                padding: 1rem 25vw 1rem
 main
     padding: 0 8vw
     @include tablet

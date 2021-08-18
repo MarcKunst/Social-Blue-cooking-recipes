@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap");
-html, body, body .down, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+html, body, body .down, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,6 +40,10 @@ h1 {
 
 h2 {
   font-size: 1em;
+}
+
+h3 {
+  font-size: 0.8em;
 }
 
 h1, h2 {
@@ -139,27 +143,46 @@ header section#meta dt#category {
 header section#meta dt#area {
   list-style: url(../assets/icons/flag_small.svg);
 }
-header div#tag-wrapper {
+header div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 0 8vw;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  header div#tag-wrapper {
+  header div {
     padding: 0 10vw;
   }
 }
 @media (min-width: 1025px) {
-  header div#tag-wrapper {
+  header div {
     padding: 0 25vw;
   }
 }
-header div#tag-wrapper p#tag {
+header div p {
   font-weight: 200;
   letter-spacing: 0.05rem;
   font-size: 0.8rem;
   overflow-wrap: break-word;
+}
+header div a {
+  font-size: 0.8rem;
+  font-family: "roboto", sans-serif;
+  font-weight: 200;
+  color: #EEB626;
+}
+header div#source-wrapper {
+  padding: 1rem 8vw 0rem;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  header div#source-wrapper {
+    padding: 1rem 10vw;
+  }
+}
+@media (min-width: 1025px) {
+  header div#source-wrapper {
+    padding: 1rem 25vw 1rem;
+  }
 }
 
 main {

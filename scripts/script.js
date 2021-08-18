@@ -59,6 +59,13 @@ category.innerHTML = data.strCategory;
         } 
     }
 
+    for (let value in data.strSource) {
+        if (data.strSource[value] != undefined) {
+            const source = document.getElementById("source");
+            source.innerHTML = data.strSource;
+            source.href = data.strSource;
+            }
+    }
 }
 
 function getImage(data) {
