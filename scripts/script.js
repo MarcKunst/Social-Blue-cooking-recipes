@@ -21,8 +21,7 @@ function handelData(data) {
     const combinedList = combine(ingredients, measurements)
     console.log(cleanData)
     
-    getImage(cleanData);
-    getImage2(cleanData);
+    getImages(cleanData);
     getMetaData(cleanData);
     getInstructions(cleanData)
     createList(combinedList)
@@ -68,22 +67,18 @@ category.innerHTML = data.strCategory;
     }
 }
 
-function getImage(data) {
+function getImages(data) {
     const image = document.createElement("img");
     const imageParent = document.getElementById("img-wrapper");
+    const image2 = document.createElement("img");
+    const smallerContainer = document.getElementById("img-container");
     const imageSource = data.strMealThumb;
     image.id = "food-img";
     image.src = imageSource;
+    image2.id = "main-img";
+    image2.src = imageSource;
     imageParent.appendChild(image);
-}
-
-function getImage2(data) {
-    const image = document.createElement("img");
-    const smallerContainer = document.getElementById("img-container");
-    const imageSource = data.strMealThumb;
-    image.id = "main-img";
-    image.src = imageSource;
-    smallerContainer.appendChild(image);
+    smallerContainer.appendChild(image2);
 }
 
 function getIngredients(data) {
