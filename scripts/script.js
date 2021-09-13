@@ -109,6 +109,7 @@ function getMeasures(data) {
 function combine(ingredients, measurements) {
     //step1 make arrays of ingredients and measurements
     //step2 combine the correct values from the arrays with the map function
+    //step3 join the ingredients and measurments together with a space in between to form a sentence
     const ingredientArray = Object.values(ingredients);
     const measurementArray = Object.values(measurements);
     const zipArrays = measurementArray
@@ -120,12 +121,12 @@ function combine(ingredients, measurements) {
 }
 
 function createList(data) {
-    let ol = document.createElement("ul");
+    let ul = document.createElement("ul");
     for (let i of data) {
         let li = document.createElement("li"); li.innerHTML = i;
-        ol.appendChild(li);
+        ul.appendChild(li);
     }
-    document.getElementById("list-wrapper").appendChild(ol);
+    document.getElementById("list-wrapper").appendChild(ul);
 }
 
 function getInstructions(data) {
